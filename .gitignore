@@ -1,2 +1,6 @@
 build/
 *.bkp
+*.zip
+*.gbr
+*.gbrjob
+fp-info-cache
