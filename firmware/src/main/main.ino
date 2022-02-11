@@ -6,9 +6,9 @@
 #include <Keyboard.h>
 
 #define PORT_POTENTIOMETER 10   // analog
-#define PORT_BUTTON_A      7    // digital
+#define PORT_BUTTON_A      8    // digital
 #define PORT_BUTTON_B      6    // digital
-#define PORT_BUTTON_C      5    // digital
+#define PORT_BUTTON_C      4    // digital
 
 #define LIMIT 50
 
@@ -35,9 +35,9 @@ void setup() {
 
 void loop() {
 	read_rotary();
-	read_button(0, camera);
-	read_button(1, mute);
-	read_button(2, raise);
+	read_button(0, raise);
+	read_button(1, camera);
+	read_button(2, mute);
 }
 
 // Implementations
@@ -82,37 +82,32 @@ void read_rotary() {
 }
 
 void mute() {
-	Keyboard.print("mute\n");
-//	Keyboard.press('D');
-//	Keyboard.press(KEY_LEFT_CTRL);
-//	Keyboard.releaseAll();
-}
-
-void raise() {
-	Keyboard.print("raise\n");
-//	Keyboard.press(KEY_LEFT_CTRL);
-//	Keyboard.press(KEY_LEFT_GUI);
-//	Keyboard.press('H');
-//	Keyboard.releaseAll();
+	Keyboard.press(KEY_LEFT_ALT);
+	Keyboard.press('d');
+	Keyboard.releaseAll();
 }
 
 void camera() {
-	Keyboard.print("camera\n");
-//	Keyboard.press(KEY_LEFT_CTRL);
-//	Keyboard.press('W');
-//	Keyboard.releaseAll();
+	Keyboard.press(KEY_LEFT_ALT);
+	Keyboard.press('e');
+	Keyboard.releaseAll();
+}
+
+void raise() {
+	Keyboard.press(KEY_LEFT_GUI);
+	Keyboard.press(KEY_LEFT_ALT);
+	Keyboard.press('h');
+	Keyboard.releaseAll();
 }
 
 void volume_up() {
-	Keyboard.print("up\n");
-//	Keyboard.press(KEY_RIGHT_GUI);
-//	Keyboard.press(KEY_F10);
-//	Keyboard.releaseAll();
+	Keyboard.press(KEY_RIGHT_GUI);
+	Keyboard.press(KEY_F10);
+	Keyboard.releaseAll();
 }
 
 void volume_down() {
-	Keyboard.print("down\n");
-// 	Keyboard.press(KEY_RIGHT_GUI);
-// 	Keyboard.press(KEY_F9);	
-// 	Keyboard.releaseAll();
+ 	Keyboard.press(KEY_RIGHT_GUI);
+ 	Keyboard.press(KEY_F9);	
+ 	Keyboard.releaseAll();
 }
