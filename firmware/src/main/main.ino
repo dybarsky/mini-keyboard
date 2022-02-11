@@ -5,7 +5,7 @@
 #include <math.h>
 #include <Keyboard.h>
 
-#define PORT_POTENTIOMETER 10   // analog
+#define PORT_POTENTIOMETER 5  	// analog
 #define PORT_BUTTON_A      8    // digital
 #define PORT_BUTTON_B      6    // digital
 #define PORT_BUTTON_C      4    // digital
